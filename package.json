@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/elfin-git/To-Do-List/issues"
   },
-  "homepage": "https://github.com/elfin-git/To-Do-List#readme"
+  "homepage": "https://github.com/elfin-git/To-Do-List#readme",
+  "devDependencies": {
+    "hint": "^7.1.1"
+  }
 }
