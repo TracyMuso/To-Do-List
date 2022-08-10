@@ -1,0 +1,118 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+
+@font-face {
+  font-family: 'GidolinyaRegular';
+  src:
+    url('./my-font.woff2') format('woff2'),
+    url('./my-font.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
+
+body {
+  width: 100%;
+  background-color: rgb(248, 234, 217);
+  font-family: sans-serif, 'GidolinyaRegular';
+}
+
+h1 {
+  font-size: 30px;
+  padding: 1rem;
+  text-align: center;
+  margin: 1rem;
+}
+
+#list-cont {
+  width: 50%;
+  margin: 1rem auto;
+  padding: 0;
+  border: solid 1px rgb(0, 0, 0);
+}
+
+#title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 97%;
+  padding: 0.5rem;
+  border-bottom: solid 1px rgb(32, 29, 29);
+  margin: auto;
+}
+
+.refresh {
+  width: 15px;
+  height: 15px;
+  padding: 0.3rem;
+  margin-right: 0.5rem;
+}
+
+.bi-arrow-counterclockwise {
+  font-size: 15px;
+  color: rgb(0, 0, 0);
+}
+
+#new-item {
+  width: 97%;
+  padding: 0.4rem;
+  margin: auto;
+  border-bottom: solid 1px rgb(32, 29, 29);
+  font-size: 18px;
+  align-items: baseline;
+}
+
+#plus {
+  float: right;
+  padding: 0.3rem;
+  align-items: center;
+}
+
+.bi-plus {
+  font-size: 18px;
+  padding: 0.1rem;
+}
+
+#add-new {
+  width: 70%;
+  padding: 0.5rem;
+}
+
+#list-items {
+  width: 99%;
+  padding: 0.2rem;
+  margin: auto;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 0;
+}
+
+#clear {
+  margin: auto;
+  width: 100%;
+  height: 3rem;
+  padding: 0.6rem;
+}
+
+.single-task {
+  width: 100%;
+  height: 3rem;
+  display: grid;
+  grid-template-columns: 1fr 8fr 0.5fr;
+  border-bottom: solid 1px rgb(32, 29, 29);
+  padding: 0.2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.bi-three-dots-vertical {
+  font-size: 15px;
+  padding: 0.1rem;
+}
+
+label {
+  font-size: 16px;
+  text-align: start;
+  padding: 0.1rem;
+}

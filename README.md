@@ -1,10 +1,8 @@
 ## To-Do-List App
 
-> In this project, I made a simple website called To-do-List. The user is able to add and remove tasjs, mark them as done or undone, the added tasks are arranged in a list at the top of the page, I used different modules with javascript classes to make these functions possible. I used simple html to set up the pages. I am using webpack javascript bundle to make this.
+> In this project, I made a simple website called To-do-List. The user is able to add and remove tasks, mark them as done or undone, the added tasks are arranged in a list at the top of the page, I used different modules with javascript classes to make these functions possible. I used simple html to set up the pages. I am using webpack javascript bundle to make this.
 
 ![](https://img.shields.io/badge/Microverse-blueviolet).
-
-<img src="https://github.com/elfin-git/Awesome-Books-App/blob/Feature/img/ui.png" width="600" height="500"/>
 
 ## Built With
 
