@@ -1,17 +1,6 @@
 class UI {
   static displayTasks = () => {
-    const toDoList = [
-      {
-        description: 'Wash car',
-        index: 1,
-        completed: true,
-      },
-      {
-        description: 'Take dog for walk',
-        index: 2,
-        completed: false,
-      },
-    ];
+    const toDoList = [];
 
     const toDo = toDoList;
     const container = document.querySelector('#list-items');

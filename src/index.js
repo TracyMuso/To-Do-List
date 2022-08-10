@@ -11,6 +11,8 @@ inputBox.onkeyup = () => {
   const newData = inputBox.value;
   if (newData.trim() !== 0) {
     addBtn.classList.add('active');
+  } else {
+    addBtn.classList.remove('active');
   }
 };
 
