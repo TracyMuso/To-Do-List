@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 class UI {
   static displayTasks = () => {
     const toDoList = [
@@ -14,7 +15,7 @@ class UI {
     ];
 
     const toDo = toDoList;
-    const container = document.querySelector('#list-items')
+    const container = document.querySelector('#list-items');
     container.innerHTML = '';
     toDo.forEach((list) => {
       const label = document.createElement('label');
