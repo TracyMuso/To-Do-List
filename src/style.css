@@ -65,6 +65,14 @@ h1 {
   float: right;
   padding: 0.3rem;
   align-items: center;
+  background-color: rgb(0, 0, 255);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+#plus.active {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .bi-plus {
