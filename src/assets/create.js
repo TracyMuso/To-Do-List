@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 class UI {
   static displayTasks = () => {
     const toDoList = [
@@ -19,16 +18,19 @@ class UI {
     container.innerHTML = '';
     toDo.forEach((list) => {
       const label = document.createElement('label');
+      const listCont = document.createElement('div');
+      listCont.className = 'single-task';
       label.setAttribute('for', 'id1');
       const toDo = document.createElement('input');
       toDo.setAttribute('type', 'checkbox');
       toDo.id = 'id1';
       const para = document.createElement('p');
       para.className = 'task';
+      para.innerHTML = list.description;
       const dots = document.createElement('i');
       dots.className = 'bi bi-three-dots-vertical';
-      container.appendChild(label);
-      label.append(toDo, para, dots);
+      container.appendChild(listCont);
+      listCont.append(label, toDo, para, dots);
     });
   }
 }

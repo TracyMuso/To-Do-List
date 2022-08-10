@@ -70,3 +70,16 @@ h1 {
   width: 45%;
   padding: 0.5rem;
 }
+
+.single-task {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  border: 1px soild rgb(32, 29, 29);
+  padding: 0.3rem;
+  align-items: center;
+}
+
+.bi-three-dots-vertical {
+  margin-left: 40%;
+}
