@@ -11,7 +11,7 @@
 body {
     width: 100%;
     background-color: rgb(248, 234, 217);
-    font-family: 'GidolinyaRegular';
+    font-family: sans-serif, 'GidolinyaRegular';
 }
 
 h1 {
@@ -19,6 +19,14 @@ h1 {
   padding: 1rem;
   text-align: center;
   margin: 1rem;
+}
+
+#in {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 15px;
+
+
 }
 
 #list-cont {

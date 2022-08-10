@@ -6,15 +6,5 @@ const toDo = document.createElement('input');
 toDo.setAttribute('type', 'checkbox');
 toDo.classList.add('task');
 
-const task = [
-  {
-    description: 'string',
-  },
-  {
-    completed: true,
-  },
-  {
-    index: Number,
-  },
-];
+
 
