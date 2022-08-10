@@ -1,16 +1,11 @@
 import _ from 'lodash';
 import './style.css';
 
-function component() {
-  const element = document.createElement('div');
-
-  // Lodash, now imported by this script
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-  element.classList.add('hello');
-  return element;
-}
-
-document.body.appendChild(component());
+const container = document.querySelector('#list-items');
+const addTask = document.querySelector('#plus');
+const toDo = document.createElement('input');
+toDo.setAttribute('type', 'checkbox');
+toDo.classList.add('task');
 
 const task = [
   {

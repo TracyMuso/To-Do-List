@@ -50,3 +50,9 @@ h1 {
   border: solid 1px black;
   font-size: 18px;
 }
+
+#list-items {
+  width: 50%;
+  padding: 0.2rem;
+  margin: auto;
+}
