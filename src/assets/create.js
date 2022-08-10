@@ -1,4 +1,4 @@
-export default class UI {
+class UI {
   static displayTasks = () => {
     const toDoList = [
       {
@@ -31,3 +31,5 @@ export default class UI {
     });
   }
 }
+
+export default UI;
