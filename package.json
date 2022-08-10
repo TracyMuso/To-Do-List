@@ -21,6 +21,7 @@
   "homepage": "https://github.com/elfin-git/To-Do-List#readme",
   "devDependencies": {
     "babel-eslint": "^10.1.0",
+    "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.7.1",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
