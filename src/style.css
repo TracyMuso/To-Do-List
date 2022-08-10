@@ -2,8 +2,9 @@
 
 @font-face {
   font-family: 'GidolinyaRegular';
-  src: url('./my-font.woff2') format('woff2'),
-       url('./my-font.woff') format('woff');
+  src:
+    url('./my-font.woff2') format('woff2'),
+    url('./my-font.woff') format('woff');
   font-weight: 600;
   font-style: normal;
 }
@@ -26,7 +27,6 @@ h1 {
   margin: 1rem auto;
   padding: 0;
   border: solid 1px rgb(0, 0, 0);
-  box-shadow: 2px solid rgb(197, 197, 197);
 }
 
 #title {
@@ -114,6 +114,5 @@ h1 {
 label {
   font-size: 16px;
   text-align: start;
-  border: 1px soild rgb(32, 29, 29);
   padding: 0.1rem;
 }
