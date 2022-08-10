@@ -11,3 +11,16 @@ function component() {
 }
 
 document.body.appendChild(component());
+
+const task = [
+  {
+    description: 'string',
+  },
+  {
+    completed: true,
+  },
+  {
+    index: Number,
+  },
+];
+
