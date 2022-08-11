@@ -1,33 +1,24 @@
-// import UI from './create.js';
+class Storage {
+  constructor() {
+    this.task = 'task';
+  }
 
-// class Storage {
-//   constructor() {
-//     this.task = 'task';
-//   }
+  preserve = (list) => {
+    const listItems = this.getItems();
+    if (listItems[list.index] === list) {
+      localStorage.setItem(this.task, JSON.stringify(listItems));
+    }
+  }
 
-//     checkLength = () => {
+  getItems = () => {
+    if (localStorage.getItem(this.task)) {
+      localStorage.parse(localStorage.getItem(this.task));
+    } return {};
+  }
 
-//     }
+  updateList = (lists) => {
+    localStorage.setItem(this.task, JSON.stringify(lists));
+  }
+}
 
-//     addToList = (list) => {
-//       if (localStorage.getItem('list')) {
-//         toDoList = JSON.parse(localStorage.getItem(list));
-//       }
-//       toDoList = [];
-//       toDoList.push()
-//     }
-
-//     removeTask = (index) => {
-
-//     }
-
-// }
-
-// clearAll = () => {
-//     btn.ad
-//     listArr = [];
-//     localStorage.setItem('list', JSON.stringify(listArr));
-//     UI.displayTasks
-// }
-
-// export default Storage;
+export default Storage;
