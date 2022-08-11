@@ -29,13 +29,13 @@ class UI {
       const listCont = document.createElement('div');
       listCont.className = 'single-task';
       listCont.innerHTML = `
+      <input type="checkbox" id="id1"></input>
          <label for"id1">${list.description}</label>
-          <input type="checkbox" id="id1"></input>
          <div class="options">
             <i class="bi bi-three-dots-vertical"></i>
            <ul class="menu">
-           <li><i class="bi bi-pen">edit</i></li>
-           <li><i class="bi bi-pencil">delete</i></li>
+           <li><i class="bi bi-pencil">edit</i></li>
+           <li><i class="bi bi-trash">delete</i></li>
            </ul>
          </div>
       `;
