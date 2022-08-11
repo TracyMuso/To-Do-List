@@ -12,22 +12,33 @@ class UI {
         completed: false,
       },
     ];
+    const clearBtn = document.querySelector('#clear');
+    const empty = document.querySelector('#empty');
 
-    const toDo = toDoList;
+    if (toDoList.length > 0) {
+      clearBtn.classList.add('active');
+    } else {
+      clearBtn.classList.remove('active');
+      empty.innerHTML = 'No tasks for today';
+    }
+
     const container = document.querySelector('#list-items');
     container.innerHTML = '';
+    const toDo = toDoList;
     toDo.forEach((list) => {
       const listCont = document.createElement('div');
       listCont.className = 'single-task';
-      const label = document.createElement('label');
-      label.setAttribute('for', 'id1');
-      label.innerHTML = list.description;
-      const toDo = document.createElement('input');
-      toDo.setAttribute('type', 'checkbox');
-      toDo.id = 'id1';
-      const dots = document.createElement('i');
-      dots.className = 'bi bi-three-dots-vertical';
-      listCont.append(toDo, label, dots);
+      listCont.innerHTML = `
+         <label for"id1">${list.description}</label>
+          <input type="checkbox" id="id1"></input>
+         <div class="options">
+            <i class="bi bi-three-dots-vertical"></i>
+           <ul class="menu">
+           <li><i class="bi bi-pen">edit</i></li>
+           <li><i class="bi bi-pencil">delete</i></li>
+           </ul>
+         </div>
+      `;
       container.appendChild(listCont);
     });
   }
