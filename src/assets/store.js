@@ -11,7 +11,6 @@ class Storage {
     listItems[list.index] = list;
     localStorage.setItem(this.task, JSON.stringify(listItems));
     localStorage.setItem('books', JSON.stringify(this.collection));
-    UI.displayTasks(this.task);
   }
 
   getItems() {
