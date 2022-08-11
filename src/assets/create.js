@@ -20,7 +20,7 @@ class UI {
       listCont.className = 'single-task';
       listCont.innerHTML = `
       <input type="checkbox" id="id1"></input>
-         <label for"id1">${list.description}</label>
+         <label for"id1">${list.value}</label>
           <div class="options">
            <i class="bi bi-three-dots-vertical"></i>
            <ul class="menu">
@@ -31,6 +31,10 @@ class UI {
       `;
       container.appendChild(listCont);
     });
+  }
+
+  addToList = () => {
+    
   }
 }
 

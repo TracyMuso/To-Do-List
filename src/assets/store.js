@@ -1,16 +1,20 @@
+import UI from './create.js';
+
 class Storage {
   constructor() {
     this.task = 'task';
   }
 
-  preserve = (list) => {
+  preserve(list) {
     const listItems = this.getItems();
-    if (listItems[list.index] === list) {
-      localStorage.setItem(this.task, JSON.stringify(listItems));
-    }
+    this.task.push(list);
+    listItems[list.index] = list;
+    localStorage.setItem(this.task, JSON.stringify(listItems));
+    localStorage.setItem('books', JSON.stringify(this.collection));
+    UI.displayTasks(this.task);
   }
 
-  getItems = () => {
+  getItems() {
     if (localStorage.getItem(this.task)) {
       localStorage.parse(localStorage.getItem(this.task));
     } return {};

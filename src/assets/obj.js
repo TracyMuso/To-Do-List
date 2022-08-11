@@ -1,8 +1,8 @@
 class List {
-  constructor(task) {
+  constructor(task, index, completed) {
     this.task = task;
-    this.index = Math.random();
-    this.completed = false;
+    this.index = index;
+    this.completed = completed;
   }
 }
 
