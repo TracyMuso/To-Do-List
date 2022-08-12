@@ -149,9 +149,10 @@ li:hover {
   padding: 0 0.1rem;
   margin: 0;
   z-index: 2;
-  top: -1rem;
+  top: -0.03rem;
+  right: 1.5rem;
   transform: scale(0);
-  transform-origin: top right;
+  transform-origin: center left;
   transition: transform 0.2s ease;
 }
 

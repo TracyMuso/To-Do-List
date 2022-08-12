@@ -1,4 +1,3 @@
-import { EditTask } from './editTask.js';
 import Storage from './store.js';
 
 class UI {
@@ -13,11 +12,10 @@ class UI {
       listCont.innerHTML = `
       <label for"id1"></label>
       <input type="checkbox" id="id1"></input>
-         <span>${task.description}</span>
+         <span class="span" contenteditable="true">${task.description}</span>
           <div class="options">
            <i class="bi bi-three-dots-vertical"></i>
            <ul class="menu">
-           <li><i class="bi bi-pencil">edit</i></li>
            <li><i class="bi bi-trash">delete</i></li>
            </ul>
          </div>

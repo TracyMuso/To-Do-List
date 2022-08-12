@@ -5,10 +5,10 @@ import Storage from './assets/store.js';
 import { EditTask } from './assets/editTask.js';
 import refreshIcon from './assets/Refresh_icon.png';
 
+EditTask();
+
 const myIcon = new Image();
 myIcon.src = refreshIcon;
-
-EditTask();
 
 const clearBtn = document.querySelector('#clear');
 const empty = document.querySelector('#empty');

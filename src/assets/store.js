@@ -1,5 +1,3 @@
-import List from './obj.js';
-
 class Storage {
   static addTasks(task) {
     const listItems = this.getItems();
@@ -26,10 +24,6 @@ class Storage {
     });
     localStorage.setItem('listItems', JSON.stringify(listItems));
   }
-
-  // updateList = (lists) => {
-  //   localStorage.setItem(this.task, JSON.stringify(lists));
-  // }
 }
 
 export default Storage;
