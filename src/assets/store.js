@@ -15,6 +15,11 @@ class Storage {
     return listItems;
   }
 
+  static savaToStorage() {
+    const listItems = this.getItems();
+    localStorage.setItem('listItems', JSON.stringify(listItems));
+  }
+
   static deleteTask(el) {
     const listItems = this.getItems();
     listItems.forEach((task, i) => {

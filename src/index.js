@@ -2,7 +2,7 @@ import './style.css';
 import List from './assets/obj.js';
 import UI from './assets/create.js';
 import Storage from './assets/store.js';
-import { EditTask } from './assets/editTask.js';
+import *  from './assets/editTask.js';
 import refreshIcon from './assets/Refresh_icon.png';
 
 EditTask();

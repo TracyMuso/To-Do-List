@@ -1,13 +1,22 @@
-/* eslint-disable import/prefer-default-export */
-import Storage from "./store.js";
+import Storage from './store.js';
 
 const EditTask = (task) => {
   const container = document.querySelector('#list-items');
   container.addEventListener('input', (e) => {
     if (e.target.classList.contains('span')) {
-      alert('you are editing!');
+      localStorage.setItem('listItems', JSON.stringify(task));
+    }
+  });
+};
+
+const fulfilledTask = () => {
+  const container = document.querySelector('#list-items');
+  container.addEventListener('input', (e) => {
+    if (e.target.classList.contains('span')) {
+      Storage.savaToStorage();
     }
   });
 };
 
 export { EditTask };
+export { fulfilledTask };
