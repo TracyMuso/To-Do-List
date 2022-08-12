@@ -1,11 +1,11 @@
 class Storage {
   static addTasks(task) {
-    const listItems = this.getItems();
+    const listItems = this.getList();
     listItems.push(task);
     localStorage.setItem('listItems', JSON.stringify(listItems));
   }
 
-  static getItems() {
+  static getList() {
     let listItems;
     if (localStorage.getItem('listItems')) {
       listItems = JSON.parse(localStorage.getItem('listItems'));
@@ -15,13 +15,8 @@ class Storage {
     return listItems;
   }
 
-  static savaToStorage() {
-    const listItems = this.getItems();
-    localStorage.setItem('listItems', JSON.stringify(listItems));
-  }
-
   static deleteTask(el) {
-    const listItems = this.getItems();
+    const listItems = this.getList();
     listItems.forEach((task, i) => {
       if (el === task.index) {
         listItems.splice(i, 1);

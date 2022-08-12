@@ -2,10 +2,7 @@ import './style.css';
 import List from './assets/obj.js';
 import UI from './assets/create.js';
 import Storage from './assets/store.js';
-import *  from './assets/editTask.js';
 import refreshIcon from './assets/Refresh_icon.png';
-
-EditTask();
 
 const myIcon = new Image();
 myIcon.src = refreshIcon;
@@ -34,7 +31,7 @@ container.addEventListener('click', (e) => {
 });
 
 addBtn.addEventListener('click', () => {
-  const listItems = Storage.getItems();
+  const listItems = Storage.getList();
   const input = document.querySelector('#add-new');
   const task = new List(input.value, listItems.length + 1);
   Storage.addTasks(task);

@@ -9,14 +9,14 @@ const EditTask = (task) => {
   });
 };
 
-const fulfilledTask = () => {
-  const container = document.querySelector('#list-items');
-  container.addEventListener('input', (e) => {
-    if (e.target.classList.contains('span')) {
-      Storage.savaToStorage();
-    }
-  });
-};
+// const fulfilledTask = () => {
+//   const container = document.querySelector('#list-items');
+//   container.addEventListener('input', (e) => {
+//     if (e.target.classList.contains('span')) {
+//       return 'hey';
+//     }
+//   });
+// };
 
 export { EditTask };
-export { fulfilledTask };
+// export { fulfilledTask };

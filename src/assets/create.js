@@ -4,7 +4,7 @@ class UI {
   static displayTasks() {
     const container = document.querySelector('#list-items');
     container.innerHTML = '';
-    const listItems = Storage.getItems();
+    const listItems = Storage.getList();
     listItems.forEach((task) => {
       const listCont = document.createElement('div');
       listCont.className = 'single-task';
