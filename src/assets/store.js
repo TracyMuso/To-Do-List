@@ -1,27 +1,35 @@
-import UI from './create.js';
+import List from './obj.js';
 
 class Storage {
-  constructor() {
-    this.task = 'task';
-  }
-
-  preserve(list) {
+  static addTasks(task) {
     const listItems = this.getItems();
-    this.task.push(list);
-    listItems[list.index] = list;
-    localStorage.setItem(this.task, JSON.stringify(listItems));
-    localStorage.setItem('books', JSON.stringify(this.collection));
+    listItems.push(task);
+    localStorage.setItem('listItems', JSON.stringify(listItems));
   }
 
-  getItems() {
-    if (localStorage.getItem(this.task)) {
-      localStorage.parse(localStorage.getItem(this.task));
-    } return {};
+  static getItems() {
+    let listItems;
+    if (localStorage.getItem('listItems')) {
+      listItems = JSON.parse(localStorage.getItem('listItems'));
+    } else {
+      listItems = [];
+    }
+    return listItems;
   }
 
-  updateList = (lists) => {
-    localStorage.setItem(this.task, JSON.stringify(lists));
+  static deleteTask(el) {
+    const listItems = this.getItems();
+    listItems.forEach((task, i) => {
+      if (el === task.index) {
+        listItems.splice(i, 1);
+      }
+    });
+    localStorage.setItem('listItems', JSON.stringify(listItems));
   }
+
+  // updateList = (lists) => {
+  //   localStorage.setItem(this.task, JSON.stringify(lists));
+  // }
 }
 
 export default Storage;

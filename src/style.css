@@ -61,15 +61,10 @@ h1 {
   align-items: baseline;
 }
 
-#plus {
+.insert {
   float: right;
   padding: 0.3rem;
   align-items: center;
-  opacity: 0.6;
-  pointer-events: none;
-}
-
-#plus.active {
   opacity: 1;
   pointer-events: auto;
 }
@@ -113,7 +108,7 @@ h1 {
   width: 100%;
   height: 3rem;
   display: grid;
-  grid-template-columns: 1fr 8fr 1fr;
+  grid-template-columns: 0.01fr 1fr 8fr 1fr;
   border-bottom: solid 1px rgb(32, 29, 29);
   padding: 0.2rem;
   align-items: center;

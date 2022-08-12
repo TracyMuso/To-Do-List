@@ -1,8 +1,8 @@
 class List {
-  constructor(task, index, completed) {
-    this.task = task;
+  constructor(description, index) {
+    this.description = description;
     this.index = index;
-    this.completed = completed;
+    this.completed = false;
   }
 }
 

@@ -2,16 +2,19 @@ import './style.css';
 import List from './assets/obj.js';
 import UI from './assets/create.js';
 import Storage from './assets/store.js';
+import { EditTask } from './assets/editTask.js';
 import refreshIcon from './assets/Refresh_icon.png';
 
 const myIcon = new Image();
 myIcon.src = refreshIcon;
 
+EditTask();
+
 const clearBtn = document.querySelector('#clear');
 const empty = document.querySelector('#empty');
 
-const toDoList = [];
-if (toDoList.length > 0) {
+const listItems = [];
+if (listItems.length > 0) {
   clearBtn.classList.add('active');
   empty.innerHTML = '';
 } else {
@@ -19,27 +22,24 @@ if (toDoList.length > 0) {
   empty.innerHTML = 'No tasks for today';
 }
 
-const inputField = document.querySelector('#add-new');
-let userData = inputField.value;
-const addsNew = document.querySelector('#new-item');
-const addBtn = document.querySelector('#plus');
+const addBtn = document.querySelector('.insert');
 
-inputField.addEventListener('keyup', (e) => {
-  e.preventDefault();
-  if (userData.trim() != 0) {
-    addBtn.classList.add('active');
+const container = document.querySelector('#list-items');
+container.addEventListener('click', (e) => {
+  if (e.target.classList.contains('bi-trash')) {
+    // eslint-disable-next-line max-len
+    Storage.deleteTask(Number(e.target.parentElement.parentElement.parentElement.parentElement.dataset.index));
+    UI.displayTasks();
   }
-  addBtn.classList.remove('active');
 });
 
-addsNew.addEventListener('click', (e) => {
-  const isBtn = e.target.tagName.contains('button');
-  isBtn.onclick = (
-  alert('i have been clicked')
-  );
-  userData = inputField;
-  UI.displayTasks(userData);
-  userData = '';
+addBtn.addEventListener('click', () => {
+  const listItems = Storage.getItems();
+  const input = document.querySelector('#add-new');
+  const task = new List(input.value, listItems.length + 1);
+  Storage.addTasks(task);
+  UI.displayTasks();
+  input.value = '';
 });
 
-// window.onload = UI.displayTasks();
+document.addEventListener('DOMContentLoaded', UI.displayTasks());

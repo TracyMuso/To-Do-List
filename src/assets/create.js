@@ -1,12 +1,19 @@
+import { EditTask } from './editTask.js';
+import Storage from './store.js';
+
 class UI {
-  static displayTasks(list) {
+  static displayTasks() {
     const container = document.querySelector('#list-items');
     container.innerHTML = '';
-    const listCont = document.createElement('div');
-    listCont.className = 'single-task';
-    listCont.innerHTML = `
+    const listItems = Storage.getItems();
+    listItems.forEach((task) => {
+      const listCont = document.createElement('div');
+      listCont.className = 'single-task';
+      listCont.setAttribute('data-index', task.index);
+      listCont.innerHTML = `
+      <label for"id1"></label>
       <input type="checkbox" id="id1"></input>
-         <label for"id1">${list.value}</label>
+         <span>${task.description}</span>
           <div class="options">
            <i class="bi bi-three-dots-vertical"></i>
            <ul class="menu">
@@ -15,7 +22,8 @@ class UI {
            </ul>
          </div>
       `;
-    container.appendChild(listCont);
+      container.appendChild(listCont);
+    });
   }
 }
 
