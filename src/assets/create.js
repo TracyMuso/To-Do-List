@@ -11,7 +11,7 @@ class UI {
       listCont.setAttribute('data-index', task.index);
       listCont.innerHTML = `
       <label for"id1"></label>
-      <input type="checkbox" id="id1"></input>
+      <input class="input" type="checkbox" id="id1">
          <span class="span" contenteditable="true">${task.description}</span>
           <div class="options">
            <i class="bi bi-three-dots-vertical"></i>

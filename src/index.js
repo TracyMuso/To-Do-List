@@ -27,7 +27,17 @@ container.addEventListener('click', (e) => {
     // eslint-disable-next-line max-len
     Storage.deleteTask(Number(e.target.parentElement.parentElement.parentElement.parentElement.dataset.index));
     UI.displayTasks();
+    Storage.UpdateIndex();
   }
+});
+
+container.addEventListener('blur', (e) => {
+  // eslint-disable-next-line max-len
+  const listItems = Storage.getList();
+  if (e.target.classList.contains('span')) {
+    Storage.getList(Number(e.target.parentElement.parentElement.dataset.index));
+  }
+  localStorage.setItem('listItems', JSON.stringify(listItems));
 });
 
 addBtn.addEventListener('click', () => {
@@ -37,6 +47,20 @@ addBtn.addEventListener('click', () => {
   Storage.addTasks(task);
   UI.displayTasks();
   input.value = '';
+});
+
+const input = document.querySelector('#add-new');
+input.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter') {
+    const listItems = Storage.getList();
+    const input = document.querySelector('#add-new');
+    if (input.value !== '') {
+      const task = new List(input.value, listItems.length + 1);
+      Storage.addTasks(task);
+      UI.displayTasks();
+      input.value = '';
+    }
+  }
 });
 
 document.addEventListener('DOMContentLoaded', UI.displayTasks());

@@ -24,6 +24,14 @@ class Storage {
     });
     localStorage.setItem('listItems', JSON.stringify(listItems));
   }
+
+  static UpdateIndex() {
+    const listItems = this.getList();
+    listItems.forEach((task, i) => {
+      listItems[i].index = i + 1;
+    });
+    localStorage.setItem('listItems', JSON.stringify(listItems));
+  }
 }
 
 export default Storage;
