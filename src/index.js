@@ -1,44 +1,41 @@
 import './style.css';
-import List from './assets/obj.js';
 import UI from './assets/create.js';
 import Storage from './assets/store.js';
 import refreshIcon from './assets/Refresh_icon.png';
-import { LibManifestPlugin } from 'webpack';
 
 const myIcon = new Image();
 myIcon.src = refreshIcon;
 
-const clearBtn = document.querySelector('#clear');
-const empty = document.querySelector('#empty');
+class List {
+  constructor(description, index) {
+    this.description = description;
+    this.index = index;
+    this.completed = false;
+  }
+}
 
-// const listItems = [];
-// if (listItems.length > 0) {
-//   clearBtn.classList.add('active');
-//   empty.innerHTML = '';
-// } else {
-//   clearBtn.classList.remove('active');
-//   empty.innerHTML = 'No tasks for today';
-// }
-
+const container = document.querySelector('#list-items');
 const addBtn = document.querySelector('.insert');
 
-document.querySelectorAll('.span').forEach((text, i) => {
-  text.addEventListener('blur', () => {
-    const listItems = Storage.getList();
-    const edited = document.querySelectorAll('#span');
-    listItems[i].completed = checked[i].checked;
-    localStorage.setItem('listItems', JSON.stringify(listItems));
-  });
+// Clear all completed
+const clearBtn = document.querySelector('#clear');
+clearBtn.addEventListener('click', () => {
+  let listItems = Storage.getList();
+  listItems = listItems.filter((todo) => !todo.completed);
+  localStorage.setItem('listItems', JSON.stringify(listItems));
+  UI.displayTasks();
 });
 
-// container.addEventListener('blur', (e) => {
-//   const listItems = Storage.getList();
-//   if (e.target.classList.contains('span')) {
-//     Storage.getList(e.target);
-//   }
-//   localStorage.setItem('listItems', JSON.stringify(listItems));
-// });
+// Delete from the list
+container.addEventListener('click', (e) => {
+  if (e.target.classList.contains('bi-trash')) {
+    Storage.deleteTask(Number(e.target.parentElement.parentElement.dataset.index));
+    UI.displayTasks();
+    Storage.updateIndex();
+  }
+});
 
+// Add to list
 addBtn.addEventListener('click', () => {
   const listItems = Storage.getList();
   const input = document.querySelector('#add-new');
@@ -56,7 +53,6 @@ input.addEventListener('keypress', (e) => {
     const input = document.querySelector('#add-new');
     if (input.value !== '') {
       const listIndex = listItems.length + 1;
-      console.log(listIndex);
       const task = new List(input.value, listIndex);
       Storage.addToList(task);
       UI.displayTasks();
@@ -65,4 +61,4 @@ input.addEventListener('keypress', (e) => {
   }
 });
 
-document.addEventListener('DOMContentLoaded', UI.displayTasks());
+document.addEventListener('DOMContentLoaded', UI.displayTasks(), Storage.updateIndex());

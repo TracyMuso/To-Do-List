@@ -5,29 +5,38 @@ class UI {
     const container = document.querySelector('#list-items');
     container.innerHTML = '';
     const listItems = Storage.getList();
-    listItems.forEach((task, id) => {
+    listItems.forEach((todo) => {
       const listCont = document.createElement('div');
       listCont.className = 'single-task';
-      listCont.id = `${id}`;
+      listCont.setAttribute('data-index', todo.index);
       listCont.innerHTML = `
-      <label for"id">
+      <label for"id"></label>
       <input id="id"class="input" type="checkbox">
-         <span contenteditable="true">${task.description}</span>
-         </label>
+         <span class="span" contenteditable="true">${todo.description}</span>
           <div class="options">
-          <span class="delete">delete</span>
+           <i class="bi bi-three-dots-vertical"></i>
+           <i class="bi bi-trash">delete</i>
          </div>
       `;
-      const deletebtn = document.querySelectorAll('.delete');
-      deletebtn.forEach((item) => {
-        item.addEventListener('click', (e) => {
-          const listId = e.target.parentElement.parentElement.id;
-          Storage.deleteTask(listId);
-          // Storage.UpdateIndex();
+      document.querySelectorAll('.input').forEach((checked, i) => {
+        const taskName = checked.nextElementSibling;
+        checked.addEventListener('change', () => {
+          const listItems = Storage.getList();
+          taskName.classList.toggle('checked');
+          const checkbox = document.querySelectorAll('.input');
+          listItems[i].completed = checkbox[i].checked;
+          localStorage.setItem('listItems', JSON.stringify(listItems));
         });
       });
-      // <i class="bi bi-three-dots-vertical"></i>
-      // <i class="bi bi-trash>delete</i>
+
+      document.querySelectorAll('.span').forEach((edit, i) => {
+        edit.addEventListener('blur', () => {
+          const listItems = Storage.getList();
+          const span = document.querySelectorAll('.span');
+          listItems[i].description = span[i].value;
+          localStorage.setItem('listItems', JSON.stringify(listItems));
+        });
+      });
       container.appendChild(listCont);
     });
   }

@@ -9,35 +9,20 @@ static getList = () => {
   return listItems;
 }
 
-// static checkLength = () => {
-//   const listItems = this.getList();
-//   const empty = document.querySelector('#empty');
-//   if (listItems.length === 0) {
-//     empty.innerHTML = 'No Tasks for today';
-//   } else {
-//     empty.innerHTML = '';
-//   }
-//   if (listItems.length === 0) {
-//     empty.innerHTML = 'No tasks for today';
-//   } else {
-//     empty.innerHTML = '';
-//   }
-// }
-
 static addToList = (task) => {
   const listItems = this.getList();
   listItems.push(task);
   localStorage.setItem('listItems', JSON.stringify(listItems));
 }
 
-static deleteTask = (deleteId) => {
+static deleteTask = (id) => {
   const listItems = this.getList();
-  listItems.splice(deleteId, 1);
-  listItems.forEach((element, i) => {
-    listItems[i].index = i + 1;
+  listItems.forEach((task, i) => {
+    if (id === task.index) {
+      listItems.splice(i, 1);
+    }
   });
   localStorage.setItem('listItems', JSON.stringify(listItems));
-  window.location.reload();
 }
 
 static updateIndex = () => {
