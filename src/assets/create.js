@@ -1,33 +1,43 @@
-class UI {
-  static displayTasks = () => {
-    const toDoList = [
-      {
-        description: 'Wash car',
-        index: 1,
-        completed: true,
-      },
-      {
-        description: 'Take dog for walk',
-        index: 2,
-        completed: false,
-      },
-    ];
+import Storage from './store.js';
 
-    const toDo = toDoList;
+class UI {
+  static displayTasks() {
     const container = document.querySelector('#list-items');
     container.innerHTML = '';
-    toDo.forEach((list) => {
+    const listItems = Storage.getList();
+    listItems.forEach((todo) => {
       const listCont = document.createElement('div');
       listCont.className = 'single-task';
-      const label = document.createElement('label');
-      label.setAttribute('for', 'id1');
-      label.innerHTML = list.description;
-      const toDo = document.createElement('input');
-      toDo.setAttribute('type', 'checkbox');
-      toDo.id = 'id1';
-      const dots = document.createElement('i');
-      dots.className = 'bi bi-three-dots-vertical';
-      listCont.append(toDo, label, dots);
+      listCont.setAttribute('data-index', todo.index);
+      listCont.innerHTML = `
+      <label for"id"></label>
+      <input id="id" class="input" type="checkbox">
+         <span class="span" contenteditable="true">${todo.description}</span>
+          <div class="options">
+           <i class="bi bi-three-dots-vertical"></i>
+           <i class="bi bi-trash">delete</i>
+         </div>
+      `;
+
+      document.querySelectorAll('.input').forEach((checked, i) => {
+        const taskName = checked.nextElementSibling;
+        checked.addEventListener('change', () => {
+          const listItems = Storage.getList();
+          taskName.classList.toggle('checked');
+          const checkbox = document.querySelectorAll('.input');
+          listItems[i].completed = checkbox[i].checked;
+          localStorage.setItem('listItems', JSON.stringify(listItems));
+        });
+      });
+
+      document.querySelectorAll('.span').forEach((edit, i) => {
+        edit.addEventListener('input', () => {
+          const listItems = Storage.getList();
+          const span = document.querySelectorAll('.span');
+          listItems[i].description = span[i].innerHTML;
+          localStorage.setItem('listItems', JSON.stringify(listItems));
+        });
+      });
       container.appendChild(listCont);
     });
   }
