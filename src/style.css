@@ -99,7 +99,6 @@ h1 {
   pointer-events: auto;
 }
 
-
 .single-task {
   width: 100%;
   height: 3rem;
@@ -109,10 +108,6 @@ h1 {
   padding: 0.2rem;
   align-items: center;
   justify-content: center;
-}
-
-.bi-trash:hover {
-  background-color: rgb(255, 255, 255);
 }
 
 .options {
@@ -145,6 +140,10 @@ h1 {
   transform: scale(0);
   transform-origin: center left;
   transition: transform 0.2s ease;
+}
+
+.bi-trash:hover {
+  background-color: rgb(255, 255, 255);
 }
 
 .options:hover .bi-trash {
