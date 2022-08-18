@@ -11,7 +11,7 @@ class UI {
       listCont.setAttribute('data-index', todo.index);
       listCont.innerHTML = `
       <label for"id"></label>
-      <input id="id"class="input" type="checkbox">
+      <input id="id" class="input" type="checkbox">
          <span class="span" contenteditable="true">${todo.description}</span>
           <div class="options">
            <i class="bi bi-three-dots-vertical"></i>
@@ -33,7 +33,7 @@ class UI {
         edit.addEventListener('blur', () => {
           const listItems = Storage.getList();
           const span = document.querySelectorAll('.span');
-          listItems[i].description = span[i].value;
+          listItems[i].description = span[i].innerHTML;
           localStorage.setItem('listItems', JSON.stringify(listItems));
         });
       });
