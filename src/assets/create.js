@@ -18,6 +18,7 @@ class UI {
            <i class="bi bi-trash">delete</i>
          </div>
       `;
+
       document.querySelectorAll('.input').forEach((checked, i) => {
         const taskName = checked.nextElementSibling;
         checked.addEventListener('change', () => {
@@ -30,7 +31,7 @@ class UI {
       });
 
       document.querySelectorAll('.span').forEach((edit, i) => {
-        edit.addEventListener('blur', () => {
+        edit.addEventListener('input', () => {
           const listItems = Storage.getList();
           const span = document.querySelectorAll('.span');
           listItems[i].description = span[i].innerHTML;
