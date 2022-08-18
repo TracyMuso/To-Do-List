@@ -5,21 +5,29 @@ class UI {
     const container = document.querySelector('#list-items');
     container.innerHTML = '';
     const listItems = Storage.getList();
-    listItems.forEach((task) => {
+    listItems.forEach((task, id) => {
       const listCont = document.createElement('div');
       listCont.className = 'single-task';
-      listCont.setAttribute('data-index', task.index);
+      listCont.id = `${id}`;
       listCont.innerHTML = `
-      <label for"id1"></label>
-      <input class="input" type="checkbox" id="id1">
-         <span class="span" contenteditable="true">${task.description}</span>
+      <label for"id">
+      <input id="id"class="input" type="checkbox">
+         <span contenteditable="true">${task.description}</span>
+         </label>
           <div class="options">
-           <i class="bi bi-three-dots-vertical"></i>
-           <ul class="menu">
-           <li><i class="bi bi-trash">delete</i></li>
-           </ul>
+          <span class="delete">delete</span>
          </div>
       `;
+      const deletebtn = document.querySelectorAll('.delete');
+      deletebtn.forEach((item) => {
+        item.addEventListener('click', (e) => {
+          const listId = e.target.parentElement.parentElement.id;
+          Storage.deleteTask(listId);
+          // Storage.UpdateIndex();
+        });
+      });
+      // <i class="bi bi-three-dots-vertical"></i>
+      // <i class="bi bi-trash>delete</i>
       container.appendChild(listCont);
     });
   }
