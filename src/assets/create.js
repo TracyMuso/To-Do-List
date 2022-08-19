@@ -19,11 +19,9 @@ class UI {
          </div>
       `;
 
-      document.querySelectorAll('.input').forEach((checked, i) => {
-        const taskName = checked.nextElementSibling;
-        checked.addEventListener('change', () => {
+      document.querySelectorAll('.input').forEach((complete, i) => {
+        complete.addEventListener('change', () => {
           const listItems = Storage.getList();
-          taskName.classList.toggle('checked');
           const checkbox = document.querySelectorAll('.input');
           listItems[i].completed = checkbox[i].checked;
           localStorage.setItem('listItems', JSON.stringify(listItems));
