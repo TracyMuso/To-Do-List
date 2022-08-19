@@ -17,24 +17,6 @@ class List {
 const container = document.querySelector('#list-items');
 const addBtn = document.querySelector('.insert');
 
-// Clear all completed
-const clearBtn = document.querySelector('#clear');
-clearBtn.addEventListener('click', () => {
-  let listItems = Storage.getList();
-  listItems = listItems.filter((todo) => !todo.completed);
-  localStorage.setItem('listItems', JSON.stringify(listItems));
-  UI.displayTasks();
-});
-
-// Delete from the list
-container.addEventListener('click', (e) => {
-  if (e.target.classList.contains('bi-trash')) {
-    Storage.deleteTask(Number(e.target.parentElement.parentElement.dataset.index));
-    UI.displayTasks();
-    Storage.updateIndex();
-  }
-});
-
 // Add to list
 addBtn.addEventListener('click', () => {
   const listItems = Storage.getList();
@@ -59,6 +41,40 @@ input.addEventListener('keypress', (e) => {
       input.value = '';
     }
   }
+});
+
+// Delete from the list
+container.addEventListener('click', (e) => {
+  if (e.target.classList.contains('bi-trash')) {
+    Storage.deleteTask(Number(e.target.parentElement.parentElement.dataset.index));
+    UI.displayTasks();
+    Storage.updateIndex();
+    Storage.updateList();
+  }
+});
+
+// edit task
+container.addEventListener('input', (e) => {
+  if (e.target.classList.contains('name')) {
+    Storage.editTask(Number(e.target.parentElement.dataset.index));
+  }
+});
+
+// checkbox
+container.addEventListener('change', (e) => {
+  if (e.target.classList.contains('check')) {
+    e.target.checked = true;
+    Storage.checkTask(Number(e.target.parentElement.dataset.index));
+  }
+});
+
+// Clear all completed
+const clearBtn = document.querySelector('#clear');
+clearBtn.addEventListener('click', () => {
+  let listItems = Storage.getList();
+  listItems = listItems.filter((todo) => !todo.completed);
+  localStorage.setItem('listItems', JSON.stringify(listItems));
+  UI.displayTasks();
 });
 
 document.addEventListener('DOMContentLoaded', UI.displayTasks(), Storage.updateIndex());

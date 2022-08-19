@@ -9,34 +9,31 @@ class UI {
       const listCont = document.createElement('div');
       listCont.className = 'single-task';
       listCont.setAttribute('data-index', todo.index);
-      listCont.innerHTML = `
-      <label for"id"></label>
-      <input id="id" class="input" type="checkbox">
-         <span class="span" contenteditable="true">${todo.description}</span>
-          <div class="options">
-           <i class="bi bi-three-dots-vertical"></i>
-           <i class="bi bi-trash">delete</i>
-         </div>
-      `;
-
-      document.querySelectorAll('.input').forEach((complete, i) => {
-        complete.addEventListener('change', () => {
-          const listItems = Storage.getList();
-          const checkbox = document.querySelectorAll('.input');
-          listItems[i].completed = checkbox[i].checked;
-          localStorage.setItem('listItems', JSON.stringify(listItems));
-        });
-      });
-
-      document.querySelectorAll('.span').forEach((edit, i) => {
-        edit.addEventListener('input', () => {
-          const listItems = Storage.getList();
-          const span = document.querySelectorAll('.span');
-          listItems[i].description = span[i].innerHTML;
-          localStorage.setItem('listItems', JSON.stringify(listItems));
-        });
-      });
+      const label = document.createElement('label');
+      label.setAttribute('for', 'id1');
+      const inputcheck = document.createElement('input');
+      inputcheck.setAttribute('class', 'check');
+      inputcheck.setAttribute('type', 'checkbox');
+      inputcheck.setAttribute('id', 'id1');
+      const spanText = document.createElement('span');
+      spanText.setAttribute('class', 'name');
+      spanText.setAttribute('contenteditable', 'true');
+      const text = document.createTextNode(todo.description);
+      spanText.appendChild(text);
+      const divOp = document.createElement('div');
+      divOp.setAttribute('class', 'options');
+      const dots = document.createElement('i');
+      dots.setAttribute('class', 'bi bi-three-dots-vertical');
+      const trash = document.createElement('i');
+      trash.setAttribute('class', 'bi bi-trash');
+      trash.innerText = 'delete';
+      divOp.append(dots, trash);
+      listCont.append(label, inputcheck, spanText, divOp);
       container.appendChild(listCont);
+
+      if (inputcheck.clicked) {
+        inputcheck.checked = true;
+      }
     });
   }
 }
