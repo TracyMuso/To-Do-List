@@ -42,7 +42,6 @@ static checkTask = (id) => {
     const checkbox = document.querySelectorAll('.check');
     if (id === todo.index) {
       listItems[i].completed = checkbox[i].checked;
-      checkbox.checked = true;
     }
   });
   localStorage.setItem('listItems', JSON.stringify(listItems));
@@ -63,15 +62,6 @@ static updateList = () => {
     Wrapper[i].setAttribute('data-index', todo.index);
   });
 }
-
-// static updateList = (obj, index, value, targetFiled) => {
-//   // edit-input
-//   obj.forEach((objs) => {
-//     if (objs.index === parseInt(index, 10)) {
-//       objs[targetFiled] = value;
-//     }
-//   });
-// }
 }
 
 export default Storage;

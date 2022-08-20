@@ -15,6 +15,8 @@ class UI {
       inputcheck.setAttribute('class', 'check');
       inputcheck.setAttribute('type', 'checkbox');
       inputcheck.setAttribute('id', 'id1');
+      inputcheck.setAttribute('autocomplete', 'on');
+      inputcheck.checked = todo.completed;
       const spanText = document.createElement('span');
       spanText.setAttribute('class', 'name');
       spanText.setAttribute('contenteditable', 'true');
@@ -30,10 +32,6 @@ class UI {
       divOp.append(dots, trash);
       listCont.append(label, inputcheck, spanText, divOp);
       container.appendChild(listCont);
-
-      if (inputcheck.clicked) {
-        inputcheck.checked = true;
-      }
     });
   }
 }

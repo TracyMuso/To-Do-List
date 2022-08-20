@@ -63,7 +63,6 @@ container.addEventListener('input', (e) => {
 // checkbox
 container.addEventListener('change', (e) => {
   if (e.target.classList.contains('check')) {
-    e.target.checked = true;
     Storage.checkTask(Number(e.target.parentElement.dataset.index));
   }
 });
