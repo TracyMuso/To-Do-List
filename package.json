@@ -4,7 +4,7 @@
   "description": "> In this project, I made a simple website called To-do-List. The user is able to add and remove tasjs, mark them as done or undone, the added tasks are arranged in a list at the top of the page, I used different modules with javascript classes to make these functions possible. I used simple html to set up the pages. I am using webpack javascript bundle to make this.",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gh-pages -d dist",
     "start": "webpack serve --open",
     "build": "webpack"
   },
@@ -18,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/elfin-git/To-Do-List/issues"
   },
-  "homepage": "https://github.com/elfin-git/To-Do-List#readme",
+  "homepage": "https://elfin-git.github.io/To-Do-List/dist/",
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "clean-webpack-plugin": "^4.0.0",
@@ -39,6 +39,7 @@
     "webpack-dev-server": "^4.9.3"
   },
   "dependencies": {
+    "gh-pages": "^4.0.0",
     "lodash": "^4.17.21",
     "webpack": "^5.74.0",
     "webpack-cli": "^4.10.0"
