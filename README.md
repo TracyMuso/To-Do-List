@@ -12,7 +12,7 @@
 
 ## Live Demo 
 
-[liveDemoLink](https://elfin-git.github.io/To-Do-LIst/)
+[liveDemoLink](https://elfin-git.github.io/To-Do-LIst/dist/)
 
 ## Getting Started
 
