@@ -12,7 +12,7 @@
 
 ## Live Demo 
 
-[liveDemoLink](https://elfin-git.github.io/To-Do-LIst/)
+[liveDemoLink](https://elfin-git.github.io/To-Do-List/dist/)
 
 ## Getting Started
 
@@ -23,7 +23,7 @@
 - Github flow knowledge. -Intermediate CSS, HTML and Javascript. -Installation of linter files. 
 
 # Setup 
-- To clone the repository run [https://github.com/elfin-git/To-Do-LIst] in your terminal
+- To clone the repository run [https://github.com/elfin-git/To-Do-List] in your terminal
 
 # Usage
 - This can be used as a simple to-do list app to add and remove your daily tasks.
