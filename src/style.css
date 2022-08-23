@@ -40,16 +40,11 @@ h1 {
   margin: auto;
 }
 
-.refresh {
-  width: 15px;
-  height: 15px;
-  padding: 0.3rem;
-  margin-right: 0.5rem;
-}
-
 .bi-arrow-counterclockwise {
-  font-size: 15px;
-  color: rgb(0, 0, 0);
+  font-size: 19px;
+  padding: 0.3rem;
+  color: rgb(103, 99, 99);
+  margin: 0.3rem;
 }
 
 #new-item {
