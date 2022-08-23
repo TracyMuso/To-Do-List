@@ -711,6 +711,16 @@ static updateList = () => {
 
 /***/ }),
 
+/***/ "./src/Refresh_icon.png":
+/*!******************************!*\
+  !*** ./src/Refresh_icon.png ***!
+  \******************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "Refresh_icon.png";
+
+/***/ }),
+
 /***/ "./src/my-font.woff":
 /*!**************************!*\
   !*** ./src/my-font.woff ***!
@@ -875,14 +885,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ "./src/style.css");
 /* harmony import */ var _assets_create_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assets/create.js */ "./src/assets/create.js");
 /* harmony import */ var _assets_store_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./assets/store.js */ "./src/assets/store.js");
-Object(function webpackMissingModule() { var e = new Error("Cannot find module './assets/Refresh_icon.png'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+/* harmony import */ var _Refresh_icon_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Refresh_icon.png */ "./src/Refresh_icon.png");
 
 
 
 
 
 const myIcon = new Image();
-myIcon.src = Object(function webpackMissingModule() { var e = new Error("Cannot find module './assets/Refresh_icon.png'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+myIcon.src = _Refresh_icon_png__WEBPACK_IMPORTED_MODULE_3__;
 
 class List {
   constructor(description, index) {
@@ -960,4 +970,4 @@ document.addEventListener('DOMContentLoaded', _assets_create_js__WEBPACK_IMPORTE
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle799db08089ab64bd5114.js.map
+//# sourceMappingURL=bundle6e74ed7db81303799feb.js.map
