@@ -14,7 +14,6 @@ module.exports = {
       template: './src/index.html',
     }),
     new CleanWebpackPlugin(),
-
   ],
   output: {
     filename: '[name].js',
