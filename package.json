@@ -18,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/elfin-git/To-Do-List/issues"
   },
-  "homepage": "https://elfin-git.github.io/To-Do-List/dist/",
+  "homepage": "https://elfin-git.github.io/To-Do-List/",
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "clean-webpack-plugin": "^4.0.0",
