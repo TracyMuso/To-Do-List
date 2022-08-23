@@ -12,7 +12,7 @@
 
 ## Live Demo 
 
-[liveDemoLink](https://elfin-git.github.io/To-Do-List/dist/)
+[liveDemoLink](https://elfin-git.github.io/To-Do-List/)
 
 ## Getting Started
 
@@ -20,7 +20,7 @@
 
 # Prerequisites
 
-- Github flow knowledge. -Intermediate CSS, HTML and Javascript. -Installation of linter files. 
+- Github flow knowledge. -Intermediate CSS, HTML and Javascript. -Installation of linter files. -install webpack
 
 # Setup 
 - To clone the repository run [https://github.com/elfin-git/To-Do-List] in your terminal
