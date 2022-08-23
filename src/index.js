@@ -1,7 +1,10 @@
 import './style.css';
 import UI from './assets/create.js';
 import Storage from './assets/store.js';
-import './Refresh_icon.png';
+import Refreshicon from './Refresh_icon.png';
+
+const myIcon = new Image();
+myIcon.src = Refreshicon;
 
 class List {
   constructor(description, index) {
