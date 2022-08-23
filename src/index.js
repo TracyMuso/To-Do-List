@@ -71,4 +71,5 @@ clearBtn.addEventListener('click', () => {
   localStorage.setItem('listItems', JSON.stringify(listItems));
   UI.displayTasks();
 });
+
 document.addEventListener('DOMContentLoaded', UI.displayTasks(), Storage.updateIndex());

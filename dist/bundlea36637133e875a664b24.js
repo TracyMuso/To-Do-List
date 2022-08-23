@@ -948,10 +948,11 @@ clearBtn.addEventListener('click', () => {
   localStorage.setItem('listItems', JSON.stringify(listItems));
   _assets_create_js__WEBPACK_IMPORTED_MODULE_1__["default"].displayTasks();
 });
+
 document.addEventListener('DOMContentLoaded', _assets_create_js__WEBPACK_IMPORTED_MODULE_1__["default"].displayTasks(), _assets_store_js__WEBPACK_IMPORTED_MODULE_2__["default"].updateIndex());
 
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle932afe6434f645d0cccc.js.map
+//# sourceMappingURL=bundlea36637133e875a664b24.js.map
