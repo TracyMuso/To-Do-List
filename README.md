@@ -4,7 +4,7 @@
 
 ![](https://img.shields.io/badge/Microverse-blueviolet).
 
-<img src="https://github.com/elfin-git/To-Do-List/blob/main/img/ui3.png" width="800" height="500"/>
+<img src="./img/ui3.png" width="800" height="500"/>
 
 ## Built With
 
@@ -14,7 +14,7 @@
 
 ## Live Demo 
 
-[liveDemoLink](https://elfin-git.github.io/To-Do-List/)
+[liveDemoLink](https://TracyMuso.github.io/To-Do-List/)
 
 ## Getting Started
 
@@ -25,7 +25,7 @@
 - Github flow knowledge. -Intermediate CSS, HTML and Javascript. -Installation of linter files. -install webpack
 
 # Setup 
-- To clone the repository run [https://github.com/elfin-git/To-Do-List] in your terminal
+- To clone the repository run [https://github.com/TracyMuso/To-Do-List] in your terminal
 
 # Usage
 - This can be used as a simple to-do list app to add and remove your daily tasks.
@@ -40,9 +40,9 @@
 
 👤 **Tracy Musongole**
 
-- GitHub: [@githubhandle](https://github.com/elfin-git)
+- GitHub: [@githubhandle](https://github.com/TracyMuso)
 - Twitter: [@twitterhandle](https://twitter.com/tracy_muso)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/tracy-musongole)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/tracy-muso)
 
 
 ## 🤝 Contributing
@@ -50,7 +50,7 @@
 Contributions, issues, and feature requests are welcome!
 
 
-Feel free to check the [issues page](github.com/elfin-git/To-Do-LIst/issues/).
+Feel free to check the [issues page](github.com/TracyMuso/To-Do-List/issues/).
 
 ## Show your support
 
@@ -64,4 +64,4 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License
 
-This project is [MIT](./MIT.md) licensed.
+This project is [MIT](./LICENSE) licensed.
