@@ -124,6 +124,10 @@ h1 {
   cursor: pointer;
 }
 
+.completed {
+  text-decoration: line-through;
+}
+
 .bi-trash {
   position: absolute;
   background: rgb(248, 234, 217);

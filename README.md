@@ -1,6 +1,6 @@
 ## To-Do-List App
 
-> In this project, I made a simple website called To-do-List. The user is able to add and remove tasks, mark them as done or undone, the added tasks are arranged in a list at the top of the page, I used different modules with javascript classes to make these functions possible. I used simple html to set up the pages. I am using webpack javascript bundle to make this.
+> In this project, I made a simple website called To-do-List which uses CRUD methods. The user is able to add, remove, edit tasks & mark them as done or undone. The added tasks are arranged in a list at the top of the page. I built this app using webpack.
 
 ![](https://img.shields.io/badge/Microverse-blueviolet).
 
@@ -11,6 +11,7 @@
 - HTML & CSS
 - Github
 - Javascript
+- Webpack
 
 ## Live Demo 
 
